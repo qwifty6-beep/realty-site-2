@@ -30,7 +30,6 @@
       background: var(--white);
     }
 
-    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -137,7 +136,6 @@
       background: var(--primary);
     }
 
-    /* Hero Section */
     .hero {
       position: relative;
       height: 100vh;
@@ -221,14 +219,8 @@
     }
 
     @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero-text h1 {
@@ -241,14 +233,8 @@
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero-text h1 .highlight {
@@ -384,7 +370,6 @@
       border-radius: 6px;
     }
 
-    /* Floating Agent Card */
     .agent-float {
       position: fixed;
       right: 40px;
@@ -395,14 +380,8 @@
     }
 
     @keyframes floatIn {
-      from {
-        opacity: 0;
-        transform: translateY(-50%) translateX(100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(-50%) translateX(0);
-      }
+      from { opacity: 0; transform: translateY(-50%) translateX(100px); }
+      to { opacity: 1; transform: translateY(-50%) translateX(0); }
     }
 
     .agent-card {
@@ -430,7 +409,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
     }
 
     .agent-badge {
@@ -500,7 +478,6 @@
       transform: translateY(-2px);
     }
 
-    /* Section Styles */
     section {
       padding: 120px 6%;
     }
@@ -555,7 +532,6 @@
       line-height: 1.8;
     }
 
-    /* About Section */
     .about {
       background: var(--light);
     }
@@ -649,7 +625,6 @@
       margin: 0;
     }
 
-    /* Services Section */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -742,7 +717,6 @@
       font-size: 18px;
     }
 
-    /* Properties Section */
     .properties {
       background: linear-gradient(180deg, var(--white) 0%, var(--light) 100%);
     }
@@ -761,7 +735,6 @@
       overflow: hidden;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
       transition: all 0.4s;
-      position: relative;
     }
 
     .property-card:hover {
@@ -797,7 +770,6 @@
       font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
       box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
     }
 
@@ -877,7 +849,6 @@
       transform: translateY(-2px);
     }
 
-    /* Testimonials Section */
     .testimonials {
       background: var(--primary);
       color: var(--white);
@@ -967,7 +938,6 @@
       opacity: 0.7;
     }
 
-    /* Contact Section */
     .contact {
       background: var(--light);
     }
@@ -1107,7 +1077,6 @@
       box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
     }
 
-    /* Footer */
     footer {
       background: var(--primary);
       color: var(--white);
@@ -1190,7 +1159,6 @@
       font-size: 14px;
     }
 
-    /* WhatsApp Float */
     .whatsapp-float {
       position: fixed;
       bottom: 30px;
@@ -1206,6 +1174,7 @@
       z-index: 999;
       transition: all 0.3s;
       animation: floatPulse 3s infinite;
+      text-decoration: none;
     }
 
     @keyframes floatPulse {
@@ -1218,28 +1187,13 @@
       box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
     }
 
-    .whatsapp-float svg {
-      width: 38px;
-      height: 38px;
-      fill: var(--white);
-    }
-
-    /* Responsive */
     @media (max-width: 1200px) {
-      .agent-float {
-        display: none;
-      }
-      
-      .properties-grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      }
+      .agent-float { display: none; }
+      .properties-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
     }
 
     @media (max-width: 968px) {
-      .menu-toggle {
-        display: flex;
-      }
-
+      .menu-toggle { display: flex; }
       .nav-links {
         position: fixed;
         top: 0;
@@ -1254,84 +1208,29 @@
         transition: right 0.4s;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
       }
-
-      .nav-links.active {
-        right: 0;
-      }
-
-      .nav-links a {
-        color: var(--primary);
-      }
-
-      .hero-text h1 {
-        font-size: 48px;
-      }
-
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-      }
-
-      .hero-stats {
-        gap: 30px;
-      }
-
-      .expertise-list {
-        grid-template-columns: 1fr;
-      }
+      .nav-links.active { right: 0; }
+      .nav-links a { color: var(--primary); }
+      .hero-text h1 { font-size: 48px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .hero-stats { gap: 30px; }
+      .expertise-list { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
-      section {
-        padding: 80px 5%;
-      }
-
-      .hero-text h1 {
-        font-size: 36px;
-      }
-
-      .hero-stats {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .properties-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .whatsapp-float {
-        width: 60px;
-        height: 60px;
-        bottom: 20px;
-        right: 20px;
-      }
-
-      .contact-form {
-        padding: 30px;
-      }
+      section { padding: 80px 5%; }
+      .hero-text h1 { font-size: 36px; }
+      .hero-stats { flex-direction: column; gap: 20px; }
+      .properties-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .whatsapp-float { width: 60px; height: 60px; bottom: 20px; right: 20px; }
+      .contact-form { padding: 30px; }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav id="nav">
     <div class="logo">Arjun Estates</div>
     <div class="nav-links" id="navLinks">
@@ -1349,7 +1248,6 @@
     </div>
   </nav>
 
-  <!-- Hero Section with Slider -->
   <section class="hero" id="home">
     <div class="hero-slider">
       <div class="hero-slide active">
@@ -1394,11 +1292,10 @@
     </div>
   </section>
 
-  <!-- Floating Agent Card -->
   <div class="agent-float">
     <div class="agent-card">
       <div class="agent-image">
-        <img src="https://github.com/qwifty6-beep/realtor-site-test/blob/main/assets/images/broker.png?raw=true" alt="Arjun Varma">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Arjun Varma">
       </div>
       <div class="agent-badge">⭐ Top Agent 2025</div>
       <div class="agent-name">Arjun Varma</div>
@@ -1410,7 +1307,6 @@
     </div>
   </div>
 
-  <!-- About Section -->
   <section class="about" id="about">
     <div class="section-header">
       <div class="section-label">About Me</div>
@@ -1459,7 +1355,6 @@
     </div>
   </section>
 
-  <!-- Services Section -->
   <section class="services" id="services">
     <div class="section-header">
       <div class="section-label">What I Offer</div>
@@ -1503,7 +1398,6 @@
     </div>
   </section>
 
-  <!-- Properties Section -->
   <section class="properties" id="properties">
     <div class="section-header">
       <div class="section-label">Featured Listings</div>
@@ -1610,7 +1504,6 @@
     </div>
   </section>
 
-  <!-- Testimonials Section -->
   <section class="testimonials" id="testimonials">
     <div class="section-header">
       <div class="section-label">Client Success Stories</div>
@@ -1654,7 +1547,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="contact" id="contact">
     <div class="section-header">
       <div class="section-label">Get In Touch</div>
@@ -1722,7 +1614,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-grid">
       <div class="footer-section">
@@ -1770,7 +1661,86 @@
     </div>
   </footer>
 
-  <!-- WhatsApp Float Button -->
-  <a href="https://wa.me/919004329806?text=Hi Arjun, I'm interested in discussing a property" class="whatsapp-float" target="_blank">
-    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 8.135-2
+  <a href="https://wa.me/919004329806?text=Hi%20Arjun,%20I'm%20interested%20in%20discussing%20a%20property" class="whatsapp-float" target="_blank">
+    <svg width="38" height="38" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.825.737 5.607 2.137 8.048L0 32l8.135-2.135C10.486 31.167 13.18 32 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.365c-2.447 0-4.773-.661-6.761-1.917l-.485-.282-5.027 1.319 1.338-4.971-.309-.502C3.378 20.762 2.648 18.179 2.648 15.535c0-7.636 6.213-13.849 13.849-13.849S30.346 7.899 30.346 15.535c0 7.636-6.213 13.849-13.849 13.849zm7.144-9.548c-.396-.198-2.344-1.158-2.708-1.289-.364-.132-.628-.198-.892.198s-1.026 1.289-1.257 1.553c-.231.264-.463.297-.859.099s-1.674-.617-3.188-1.967c-1.179-1.053-1.975-2.354-2.206-2.751s-.025-.609.174-.806c.178-.177.396-.463.594-.694s.264-.396.396-.661c.132-.264.066-.496-.033-.694s-.892-2.15-1.223-2.944c-.322-.774-.649-.669-.892-.681-.231-.012-.496-.015-.76-.015s-.694.099-1.058.496c-.364.396-1.388 1.356-1.388 3.309s1.421 3.838 1.619 4.103c.198.264 2.798 4.271 6.778 5.989.947.409 1.687.653 2.263.835.954.302 1.821.26 2.508.158.765-.114 2.344-.958 2.675-1.883s.331-1.719.231-1.883c-.099-.165-.364-.264-.76-.463z"/>
+    </svg>
+  </a>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('nav');
+      if (window.scrollY > 100) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+      });
+    });
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.slider-dot');
+
+    function changeSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    setInterval(() => {
+      const nextSlide = (currentSlide + 1) % slides.length;
+      changeSlide(nextSlide);
+    }, 5000);
+
+    function handleSubmit() {
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const interest = document.getElementById('interest').value;
+      const message = document.getElementById('message').value;
+
+      if (!name || !phone || !email || !message) {
+        alert('Please fill in all required fields');
+        return;
+      }
+
+      const whatsappMessage = `Hi Arjun, I'm interested in your services!%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0AInterest: ${encodeURIComponent(interest)}%0AMessage: ${encodeURIComponent(message)}`;
+      window.open(`https://wa.me/919004329806?text=${whatsappMessage}`, '_blank');
+      
+      document.getElementById('name').value = '';
+      document.getElementById('phone').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('interest').value = '';
+      document.getElementById('message').value = '';
+      
+      alert('Thank you! Redirecting to WhatsApp...');
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
