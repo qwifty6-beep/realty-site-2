@@ -38,7 +38,7 @@
       z-index: 1000;
       padding: 25px 6%;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       background: transparent;
@@ -49,16 +49,6 @@
       backdrop-filter: blur(20px);
       box-shadow: 0 4px 30px rgba(22, 244, 208, 0.15);
       padding: 18px 6%;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      font-weight: 900;
-      color: var(--white);
-      letter-spacing: -1px;
-      transition: color 0.3s;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
 
     .nav-links {
@@ -402,26 +392,6 @@
       box-shadow: 0 0 20px var(--accent);
     }
 
-    .agent-float {
-      position: fixed;
-      right: 40px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 100;
-      animation: floatIn 1.2s ease 1s backwards;
-    }
-
-    @keyframes floatIn {
-      from {
-        opacity: 0;
-        transform: translateY(-50%) translateX(150px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(-50%) translateX(0);
-      }
-    }
-
     .agent-card {
       background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(15, 15, 30, 0.98));
       backdrop-filter: blur(30px);
@@ -429,7 +399,8 @@
       padding: 35px;
       box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(22, 244, 208, 0.3);
       text-align: center;
-      width: 300px;
+      width: 100%;
+      max-width: 300px;
       border: 2px solid rgba(22, 244, 208, 0.2);
       position: relative;
       overflow: hidden;
@@ -631,43 +602,13 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 100px;
+      grid-template-columns: 380px 1fr;
+      gap: 80px;
       align-items: center;
       max-width: 1400px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
-    }
-
-    .about-image {
-      position: relative;
-      border-radius: 30px;
-      overflow: hidden;
-      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.2);
-    }
-
-    .about-image::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(22, 244, 208, 0.2) 0%, transparent 50%);
-      z-index: 1;
-      mix-blend-mode: overlay;
-    }
-
-    .about-image img {
-      width: 100%;
-      height: 650px;
-      object-fit: cover;
-      transition: transform 0.8s;
-    }
-
-    .about-image:hover img {
-      transform: scale(1.08);
     }
 
     .about-text h3 {
@@ -1395,8 +1336,15 @@
     }
 
     @media (max-width: 1200px) {
-      .agent-float { display: none; }
       .properties-grid { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+      .about-grid { 
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+      .agent-card {
+        max-width: 100%;
+        margin: 0 auto;
+      }
     }
 
     @media (max-width: 968px) {
@@ -1440,7 +1388,6 @@
 </head>
 <body>
   <nav id="nav">
-    <div class="logo">AV</div>
     <div class="nav-links" id="navLinks">
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -1494,6 +1441,212 @@
       <div class="slider-dot active" onclick="changeSlide(0)"></div>
       <div class="slider-dot" onclick="changeSlide(1)"></div>
       <div class="slider-dot" onclick="changeSlide(2)"></div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="section-header">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Your Trusted Real Estate Partner</h2>
+      <p class="section-description">Combining deep market knowledge with personalized service to deliver exceptional results</p>
+    </div>
+    <div class="about-grid">
+      <div class="agent-card">
+        <div class="agent-image">
+          <img src="https://github.com/qwifty6-beep/realty-site-2/blob/main/assets/broker.png?raw=true" alt="Arjun Varma">
+        </div>
+        <div class="agent-badge">⭐ Top Agent 2025</div>
+        <div class="agent-name">Arjun Varma</div>
+        <div class="agent-title">Licensed Expert</div>
+        <div class="agent-contact">
+          <a href="tel:+919004329806" class="contact-btn call-btn">📞 Call Now</a>
+          <a href="https://wa.me/919004329806" class="contact-btn whatsapp-btn">💬 WhatsApp</a>
+        </div>
+      </div>
+      <div class="about-text">
+        <h3>Excellence in Every Transaction</h3>
+        <p>With over 10 years of experience in Mumbai's dynamic real estate market, I've helped hundreds of clients achieve their property dreams. My approach combines market expertise, integrity, and unwavering commitment to client success.</p>
+        <p>Whether you're a first-time buyer, seasoned investor, or looking to sell your property, I provide the guidance and support you need to make informed decisions and achieve your goals.</p>
+        <div class="expertise-list">
+          <div class="expertise-item">
+            <div class="expertise-icon">🏆</div>
+            <div class="expertise-text">
+              <h4>Award Winning</h4>
+              <p>Top 1% Agent 2023-2025</p>
+            </div>
+          </div>
+          <div class="expertise-item">
+            <div class="expertise-icon">💼</div>
+            <div class="expertise-text">
+              <h4>Market Expert</h4>
+              <p>Deep Mumbai Knowledge</p>
+            </div>
+          </div>
+          <div class="expertise-item">
+            <div class="expertise-icon">⚡</div>
+            <div class="expertise-text">
+              <h4>Fast Results</h4>
+              <p>Average 45 Days Close</p>
+            </div>
+          </div>
+          <div class="expertise-item">
+            <div class="expertise-icon">🤝</div>
+            <div class="expertise-text">
+              <h4>Client Focused</h4>
+              <p>98% Satisfaction Rate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-header">
+      <div class="section-label">What I Offer</div>
+      <h2 class="section-title">Comprehensive Real Estate Services</h2>
+      <p class="section-description">From property search to closing, I handle every detail with professionalism and care</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏠</div>
+        <h3>Property Buying</h3>
+        <p>Let me help you discover your perfect home. I'll guide you through every step, from finding the right property to closing the deal.</p>
+        <ul class="service-features">
+          <li>Personalized property search</li>
+          <li>Market analysis & valuation</li>
+          <li>Expert negotiation</li>
+          <li>Complete documentation support</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💎</div>
+        <h3>Property Selling</h3>
+        <p>Maximize your property's value with strategic marketing and professional presentation that attracts serious buyers.</p>
+        <ul class="service-features">
+          <li>Professional photography & staging</li>
+          <li>Multi-channel marketing campaigns</li>
+          <li>Qualified buyer screening</li>
+          <li>Quick & smooth transactions</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Investment Consulting</h3>
+        <p>Make smart investment decisions with data-driven insights and strategic planning for long-term growth.</p>
+        <ul class="service-features">
+          <li>ROI analysis & projections</li>
+          <li>Market trends research</li>
+          <li>Portfolio optimization</li>
+          <li>Risk assessment & planning</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="properties" id="properties">
+    <div class="section-header">
+      <div class="section-label">Featured Listings</div>
+      <h2 class="section-title">Exclusive Property Portfolio</h2>
+      <p class="section-description">Handpicked premium properties in Mumbai's most sought-after locations</p>
+    </div>
+    <div class="properties-grid">
+      <div class="property-card">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=85" alt="Bandra Property">
+          <span class="property-badge">New Listing</span>
+        </div>
+        <div class="property-info">
+          <div class="property-location">📍 Bandra West</div>
+          <h3 class="property-title">Stunning Sea-Facing 3BHK</h3>
+          <div class="property-price">₹4.5 Crore</div>
+          <div class="property-meta">
+            <span class="meta-item">🛏️ 3 BHK</span>
+            <span class="meta-item">📏 1,850 sq.ft</span>
+          </div>
+          <a href="#contact" class="property-cta">Schedule Viewing</a>
+        </div>
+      </div>
+      <div class="property-card">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=85" alt="Worli Property">
+          <span class="property-badge exclusive">Exclusive</span>
+        </div>
+        <div class="property-info">
+          <div class="property-location">📍 Worli</div>
+          <h3 class="property-title">Waterfront Luxury Penthouse</h3>
+          <div class="property-price">₹12.8 Crore</div>
+          <div class="property-meta">
+            <span class="meta-item">🛏️ 4 BHK</span>
+            <span class="meta-item">📏 3,200 sq.ft</span>
+          </div>
+          <a href="#contact" class="property-cta">Schedule Viewing</a>
+        </div>
+      </div>
+      <div class="property-card">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=85" alt="Andheri Property">
+          <span class="property-badge sold">Just Sold</span>
+        </div>
+        <div class="property-info">
+          <div class="property-location">📍 Andheri West</div>
+          <h3 class="property-title">Modern 2BHK with Parking</h3>
+          <div class="property-price">₹2.8 Crore</div>
+          <div class="property-meta">
+            <span class="meta-item">🛏️ 2 BHK</span>
+            <span class="meta-item">📏 1,200 sq.ft</span>
+          </div>
+          <a href="#contact" class="property-cta">Similar Properties</a>
+        </div>
+      </div>
+      <div class="property-card">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=85" alt="Juhu Property">
+          <span class="property-badge">Premium</span>
+        </div>
+        <div class="property-info">
+          <div class="property-location">📍 Juhu</div>
+          <h3 class="property-title">Independent Villa with Garden</h3>
+          <div class="property-price">₹18.5 Crore</div>
+          <div class="property-meta">
+            <span class="meta-item">🛏️ 4 BHK</span>
+            <span class="meta-item">📏 4,500 sq.ft</span>
+          </div>
+          <a href="#contact" class="property-cta">Schedule Viewing</a>
+        </div>
+      </div>
+      <div class="property-card">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=85" alt="BKC Property">
+          <span class="property-badge">Commercial</span>
+        </div>
+        <div class="property-info">
+          <div class="property-location">📍 BKC</div>
+          <h3 class="property-title">Premium Office Space</h3>
+          <div class="property-price">₹8.5 Crore</div>
+          <div class="property-meta">
+            <span class="meta-item">🏢 Commercial</span>
+            <span class="meta-item">📏 2,800 sq.ft</span>
+          </div>
+          <a href="#contact" class="property-cta">Schedule Viewing</a>
+        </div>
+      </div>
+      <div class="property-card">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=85" alt="Powai Property">
+          <span class="property-badge">New Listing</span>
+        </div>
+        <div class="property-info">
+          <div class="property-location">📍 Powai</div>
+          <h3 class="property-title">Lake View 3BHK Apartment</h3>
+          <div class="property-price">₹3.2 Crore</div>
+          <div class="property-meta">
+            <span class="meta-item">🛏️ 3 BHK</span>
+            <span class="meta-item">📏 1,650 sq.ft</span>
+          </div>
+          <a href="#contact" class="property-cta">Schedule Viewing</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1737,215 +1890,3 @@
   </script>
 </body>
 </html>
-
-  <div class="agent-float">
-    <div class="agent-card">
-      <div class="agent-image">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Arjun Varma">
-      </div>
-      <div class="agent-badge">⭐ Top Agent 2025</div>
-      <div class="agent-name">Arjun Varma</div>
-      <div class="agent-title">Licensed Expert</div>
-      <div class="agent-contact">
-        <a href="tel:+919004329806" class="contact-btn call-btn">📞 Call Now</a>
-        <a href="https://wa.me/919004329806" class="contact-btn whatsapp-btn">💬 WhatsApp</a>
-      </div>
-    </div>
-  </div>
-
-  <section class="about" id="about">
-    <div class="section-header">
-      <div class="section-label">About Me</div>
-      <h2 class="section-title">Your Trusted Real Estate Partner</h2>
-      <p class="section-description">Combining deep market knowledge with personalized service to deliver exceptional results</p>
-    </div>
-    <div class="about-grid">
-      <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=85" alt="Mumbai Skyline">
-      </div>
-      <div class="about-text">
-        <h3>Excellence in Every Transaction</h3>
-        <p>With over 10 years of experience in Mumbai's dynamic real estate market, I've helped hundreds of clients achieve their property dreams. My approach combines market expertise, integrity, and unwavering commitment to client success.</p>
-        <p>Whether you're a first-time buyer, seasoned investor, or looking to sell your property, I provide the guidance and support you need to make informed decisions and achieve your goals.</p>
-        <div class="expertise-list">
-          <div class="expertise-item">
-            <div class="expertise-icon">🏆</div>
-            <div class="expertise-text">
-              <h4>Award Winning</h4>
-              <p>Top 1% Agent 2023-2025</p>
-            </div>
-          </div>
-          <div class="expertise-item">
-            <div class="expertise-icon">💼</div>
-            <div class="expertise-text">
-              <h4>Market Expert</h4>
-              <p>Deep Mumbai Knowledge</p>
-            </div>
-          </div>
-          <div class="expertise-item">
-            <div class="expertise-icon">⚡</div>
-            <div class="expertise-text">
-              <h4>Fast Results</h4>
-              <p>Average 45 Days Close</p>
-            </div>
-          </div>
-          <div class="expertise-item">
-            <div class="expertise-icon">🤝</div>
-            <div class="expertise-text">
-              <h4>Client Focused</h4>
-              <p>98% Satisfaction Rate</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="services" id="services">
-    <div class="section-header">
-      <div class="section-label">What I Offer</div>
-      <h2 class="section-title">Comprehensive Real Estate Services</h2>
-      <p class="section-description">From property search to closing, I handle every detail with professionalism and care</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">🏠</div>
-        <h3>Property Buying</h3>
-        <p>Let me help you discover your perfect home. I'll guide you through every step, from finding the right property to closing the deal.</p>
-        <ul class="service-features">
-          <li>Personalized property search</li>
-          <li>Market analysis & valuation</li>
-          <li>Expert negotiation</li>
-          <li>Complete documentation support</li>
-        </ul>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">💎</div>
-        <h3>Property Selling</h3>
-        <p>Maximize your property's value with strategic marketing and professional presentation that attracts serious buyers.</p>
-        <ul class="service-features">
-          <li>Professional photography & staging</li>
-          <li>Multi-channel marketing campaigns</li>
-          <li>Qualified buyer screening</li>
-          <li>Quick & smooth transactions</li>
-        </ul>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">📊</div>
-        <h3>Investment Consulting</h3>
-        <p>Make smart investment decisions with data-driven insights and strategic planning for long-term growth.</p>
-        <ul class="service-features">
-          <li>ROI analysis & projections</li>
-          <li>Market trends research</li>
-          <li>Portfolio optimization</li>
-          <li>Risk assessment & planning</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="properties" id="properties">
-    <div class="section-header">
-      <div class="section-label">Featured Listings</div>
-      <h2 class="section-title">Exclusive Property Portfolio</h2>
-      <p class="section-description">Handpicked premium properties in Mumbai's most sought-after locations</p>
-    </div>
-    <div class="properties-grid">
-      <div class="property-card">
-        <div class="property-image">
-          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=85" alt="Bandra Property">
-          <span class="property-badge">New Listing</span>
-        </div>
-        <div class="property-info">
-          <div class="property-location">📍 Bandra West</div>
-          <h3 class="property-title">Stunning Sea-Facing 3BHK</h3>
-          <div class="property-price">₹4.5 Crore</div>
-          <div class="property-meta">
-            <span class="meta-item">🛏️ 3 BHK</span>
-            <span class="meta-item">📏 1,850 sq.ft</span>
-          </div>
-          <a href="#contact" class="property-cta">Schedule Viewing</a>
-        </div>
-      </div>
-      <div class="property-card">
-        <div class="property-image">
-          <img src="https://images.unsplash.com/photo-5129177774080-9991f1c4c750?w=800&q=85" alt="Worli Property">
-          <span class="property-badge exclusive">Exclusive</span>
-        </div>
-        <div class="property-info">
-          <div class="property-location">📍 Worli</div>
-          <h3 class="property-title">Waterfront Luxury Penthouse</h3>
-          <div class="property-price">₹12.8 Crore</div>
-          <div class="property-meta">
-            <span class="meta-item">🛏️ 4 BHK</span>
-            <span class="meta-item">📏 3,200 sq.ft</span>
-          </div>
-          <a href="#contact" class="property-cta">Schedule Viewing</a>
-        </div>
-      </div>
-      <div class="property-card">
-        <div class="property-image">
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=85" alt="Andheri Property">
-          <span class="property-badge sold">Just Sold</span>
-        </div>
-        <div class="property-info">
-          <div class="property-location">📍 Andheri West</div>
-          <h3 class="property-title">Modern 2BHK with Parking</h3>
-          <div class="property-price">₹2.8 Crore</div>
-          <div class="property-meta">
-            <span class="meta-item">🛏️ 2 BHK</span>
-            <span class="meta-item">📏 1,200 sq.ft</span>
-          </div>
-          <a href="#contact" class="property-cta">Similar Properties</a>
-        </div>
-      </div>
-      <div class="property-card">
-        <div class="property-image">
-          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=85" alt="Juhu Property">
-          <span class="property-badge">Premium</span>
-        </div>
-        <div class="property-info">
-          <div class="property-location">📍 Juhu</div>
-          <h3 class="property-title">Independent Villa with Garden</h3>
-          <div class="property-price">₹18.5 Crore</div>
-          <div class="property-meta">
-            <span class="meta-item">🛏️ 4 BHK</span>
-            <span class="meta-item">📏 4,500 sq.ft</span>
-          </div>
-          <a href="#contact" class="property-cta">Schedule Viewing</a>
-        </div>
-      </div>
-      <div class="property-card">
-        <div class="property-image">
-          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=85" alt="BKC Property">
-          <span class="property-badge">Commercial</span>
-        </div>
-        <div class="property-info">
-          <div class="property-location">📍 BKC</div>
-          <h3 class="property-title">Premium Office Space</h3>
-          <div class="property-price">₹8.5 Crore</div>
-          <div class="property-meta">
-            <span class="meta-item">🏢 Commercial</span>
-            <span class="meta-item">📏 2,800 sq.ft</span>
-          </div>
-          <a href="#contact" class="property-cta">Schedule Viewing</a>
-        </div>
-      </div>
-      <div class="property-card">
-        <div class="property-image">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=85" alt="Powai Property">
-          <span class="property-badge">New Listing</span>
-        </div>
-        <div class="property-info">
-          <div class="property-location">📍 Powai</div>
-          <h3 class="property-title">Lake View 3BHK Apartment</h3>
-          <div class="property-price">₹3.2 Crore</div>
-          <div class="property-meta">
-            <span class="meta-item">🛏️ 3 BHK</span>
-            <span class="meta-item">📏 1,650 sq.ft</span>
-          </div>
-          <a href="#contact" class="property-cta">Schedule Viewing</a>
-        </div>
-      </div>
-    </div>
-  </section
